@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <circle cx="100" cy="100" r="90" fill="#EDF2F7" opacity="0.5"/>
+  
+  <!-- Data points and connecting lines -->
+  <path d="M60,140 C80,120 100,160 140,80" 
+        stroke="#2B6CB0" 
+        stroke-width="3" 
+        fill="none"
+        stroke-linecap="round"/>
+  
+  <!-- Stylized bird shape made of data points -->
+  <circle cx="60" cy="140" r="4" fill="#3182CE"/>
+  <circle cx="90" cy="130" r="4" fill="#3182CE"/>
+  <circle cx="120" cy="110" r="4" fill="#3182CE"/>
+  <circle cx="140" cy="80" r="4" fill="#3182CE"/>
+  
+  <!-- Abstract wing shape -->
+  <path d="M90,130 Q120,90 150,70" 
+        stroke="#4299E1" 
+        stroke-width="2" 
+        fill="none"
+        stroke-linecap="round"/>
+        
+  <!-- Dots pattern suggesting data points -->
+  <circle cx="75" cy="100" r="2" fill="#63B3ED"/>
+  <circle cx="85" cy="90" r="2" fill="#63B3ED"/>
+  <circle cx="95" cy="95" r="2" fill="#63B3ED"/>
+  <circle cx="105" cy="85" r="2" fill="#63B3ED"/>
+</svg>
