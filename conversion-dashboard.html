@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Conversion Dashboard</title>
+    <title>xstats.blue - Twitter Conversion Analytics</title>
+    
+    <!-- Add meta tags for social sharing -->
+    <meta name="description" content="Analyze your Twitter engagement funnel and conversion rates with this free tool. Upload your Twitter analytics and get instant insights.">
+    <meta name="keywords" content="twitter analytics, social media metrics, engagement funnel, conversion rates">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xstats.blue/">
+    <meta property="og:title" content="xstats.blue - Twitter Conversion Analytics">
+    <meta property="og:description" content="Analyze your Twitter engagement funnel and conversion rates with this free tool. Upload your Twitter analytics and get instant insights.">
+    <meta property="og:image" content="https://xstats.blue/preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xstats.blue/">
+    <meta property="twitter:title" content="xstats.blue - Twitter Conversion Analytics">
+    <meta property="twitter:description" content="Analyze your Twitter engagement funnel and conversion rates with this free tool. Upload your Twitter analytics and get instant insights.">
+    <meta property="twitter:image" content="https://xstats.blue/preview.png">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/4.1.0/cdn.min.js" integrity="sha512-bz58Sg3BAWMEMPTH0B8+pK/+5Qfqq6b2Ho2G4ld12x4fiUVqpY8jSbN/73qpBQYFLU4QnKVL5knUm4uqcJGLVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -66,29 +85,12 @@
 
             <!-- Update dashboard div with canvas elements -->
             <div id="dashboard" class="hidden">
-                <!-- Add chart containers -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div class="bg-white p-4 rounded-lg shadow-sm">
-                        <canvas id="likeConversionChart"></canvas>
-                        <p class="text-sm text-gray-600 text-center mt-2">Percentage of impressions that result in likes</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm">
-                        <canvas id="profileVisitConversionChart"></canvas>
-                        <p class="text-sm text-gray-600 text-center mt-2">Percentage of likes that lead to profile visits</p>
-                    </div>
-                </div>
-
-                <!-- Single column for follow conversion -->
-                <div class="mb-6">
-                    <div class="bg-white p-4 rounded-lg shadow-sm">
-                        <canvas id="followConversionChart"></canvas>
-                        <p class="text-sm text-gray-600 text-center mt-2">Percentage of profile visits that convert to follows</p>
-                    </div>
-                </div>
-
                 <!-- Single column for funnel -->
                 <div class="mb-6">
                     <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="text-center mb-2">
+                            <a href="https://xstats.blue" target="_blank" class="text-twitter-blue hover:underline text-lg font-semibold">xstats.blue</a>
+                        </div>
                         <div class="relative">
                             <canvas id="funnelChart"></canvas>
                             <!-- Overlay container with absolute positioning -->
@@ -99,12 +101,53 @@
                 </div>
 
                 <!-- Single column for monthly trends -->
-                <div class="bg-white p-4 rounded-lg shadow-sm">
-                    <div id="cohortFunnelChart"></div>
-                    <p class="text-sm text-gray-600 text-center mt-2">Monthly breakdown of conversion rates across all stages</p>
+                <div class="mb-6">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div id="cohortFunnelChart"></div>
+                        <p class="text-sm text-gray-600 text-center mt-2">Monthly breakdown of conversion rates across all stages</p>
+                    </div>
+                </div>
+
+                <!-- Individual line charts, each on their own line -->
+                <div class="space-y-6">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <canvas id="likeConversionChart"></canvas>
+                        <p class="text-sm text-gray-600 text-center mt-2">Percentage of impressions that result in likes</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <canvas id="profileVisitConversionChart"></canvas>
+                        <p class="text-sm text-gray-600 text-center mt-2">Percentage of likes that lead to profile visits</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <canvas id="followConversionChart"></canvas>
+                        <p class="text-sm text-gray-600 text-center mt-2">Percentage of profile visits that convert to follows</p>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 py-6 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="text-sm text-gray-500">
+                    Built 100% with AI
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-twitter-blue" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                        <a href="https://x.com/nearcyan" target="_blank" rel="noopener" class="text-twitter-blue hover:underline">near</a>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                        </svg>
+                        <a href="https://github.com/Nearcyan/twitter-conversion-rates" target="_blank" rel="noopener" class="text-gray-400 hover:text-twitter-blue hover:underline">code</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         <style>
         .text-twitter-blue {
@@ -419,37 +462,59 @@
             const meta = chart.getDatasetMeta(0);
             const dataset = chart.data.datasets[0];
             
-            // Skip the first bar (impressions)
-            for (let i = 1; i < meta.data.length; i++) {
+            // Helper function to format numbers with K/M
+            const formatNumber = (num) => {
+                if (num >= 1000000) {
+                    return Math.round(num / 1000000) + 'M';
+                } else if (num >= 1000) {
+                    return Math.round(num / 1000) + 'K';
+                }
+                return Math.round(num).toString();
+            };
+            
+            // Now include all bars (including impressions)
+            for (let i = 0; i < meta.data.length; i++) {
                 const currentBar = meta.data[i];
                 const currentValue = dataset.data[i];
-                const previousValue = dataset.data[i-1];
+                const previousValue = i > 0 ? dataset.data[i-1] : null;
                 const initialValue = dataset.data[0];
-                
-                const stepConversion = ((currentValue / previousValue) * 100).toFixed(1);
-                const totalConversion = ((currentValue / initialValue) * 100).toFixed(3);
+                const metricName = chart.data.labels[i];
                 
                 const label = document.createElement('div');
                 label.className = 'absolute pointer-events-none';
                 
-                // Position relative to the bar
                 const x = currentBar.x;
-                const y = currentBar.y - 20; // Adjust this value to position above the bar
+                const y = currentBar.y - 20;
                 
                 label.style.left = `${x}px`;
                 label.style.top = `${y}px`;
                 label.style.transform = 'translate(-50%, -100%)';
                 
-                label.innerHTML = `
-                    <div class="bg-white px-3 py-2 rounded shadow-sm text-center" 
-                         style="color: ${dataset.backgroundColor[i]}; border: 1px solid ${dataset.backgroundColor[i]}">
-                        <div class="mb-1 font-bold">${stepConversion}% from previous</div>
-                        <div class="opacity-75 text-xs space-y-0.5">
-                            <div>${totalConversion}% of impressions</div>
-                            <div class="font-mono">1:${Math.round(initialValue/currentValue)} conversion</div>
+                if (i === 0) {
+                    // Impressions bar - simple label
+                    label.innerHTML = `
+                        <div class="bg-white px-3 py-2 rounded shadow-sm text-center" 
+                             style="color: ${dataset.backgroundColor[i]}; border: 1px solid ${dataset.backgroundColor[i]}">
+                            <div class="font-bold">${formatNumber(currentValue)} ${metricName}</div>
                         </div>
-                    </div>
-                `;
+                    `;
+                } else {
+                    // Other bars - full stats
+                    const stepConversion = ((currentValue / previousValue) * 100).toFixed(1);
+                    const totalConversion = ((currentValue / initialValue) * 100).toFixed(3);
+                    
+                    label.innerHTML = `
+                        <div class="bg-white px-3 py-2 rounded shadow-sm text-center whitespace-nowrap" 
+                             style="color: ${dataset.backgroundColor[i]}; border: 1px solid ${dataset.backgroundColor[i]}">
+                            <div class="font-bold mb-1">${formatNumber(currentValue)} ${metricName}</div>
+                            <div class="mb-1 font-bold whitespace-nowrap">${stepConversion}% from previous</div>
+                            <div class="opacity-75 text-xs space-y-0.5">
+                                <div class="whitespace-nowrap">${totalConversion}% of impressions</div>
+                                <div class="font-mono whitespace-nowrap">1/${Math.round(initialValue/currentValue)} conversion</div>
+                            </div>
+                        </div>
+                    `;
+                }
                 
                 labelsContainer.appendChild(label);
             }
@@ -553,7 +618,7 @@
                 { step: 'Impressions', value: funnelTotals.impressions },
                 { step: 'Likes', value: funnelTotals.likes },
                 { step: 'Profile Visits', value: funnelTotals.profileVisits },
-                { step: 'New Follows', value: funnelTotals.newFollows }
+                { step: 'Follows', value: funnelTotals.newFollows }
             ];
 
             // Create or update funnel chart
@@ -572,7 +637,10 @@
                             'rgba(245, 158, 11, 0.8)',  // yellow
                             'rgba(239, 68, 68, 0.8)'    // red
                         ],
-                        borderWidth: 1
+                        borderWidth: 1,
+                        barThickness: 'flex',
+                        maxBarThickness: 400,
+                        minBarLength: 150
                     }]
                 },
                 options: {
@@ -610,12 +678,18 @@
                         y: {
                             type: 'logarithmic',
                             beginAtZero: true,
+                            grid: {
+                                display: false  // Remove horizontal grid lines
+                            },
                             title: {
                                 display: true,
                                 text: 'Count (log scale)'
                             }
                         },
                         x: {
+                            grid: {
+                                display: false  // Remove vertical grid lines
+                            },
                             title: {
                                 display: true,
                                 text: 'Funnel Stage'
