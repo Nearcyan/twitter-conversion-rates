@@ -288,8 +288,9 @@
                 return;
             }
 
-            // Check file type
-            if (file.type !== 'text/csv') {
+            // Check file extension instead of MIME type
+            const fileExtension = file.name.split('.').pop().toLowerCase();
+            if (fileExtension !== 'csv') {
                 showError('Please upload a CSV file');
                 return;
             }
